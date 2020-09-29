@@ -1,4 +1,4 @@
-class View {
+export class View {
     constructor(seletor) {
         this._elemento = $(seletor);
     }
@@ -6,5 +6,3 @@ class View {
         this._elemento.html(this.template(model));
     }
 }
-// o protected serve para que, tanto a classe em si 
-// quanto seus filhos possam usar os métodos e atributos. 

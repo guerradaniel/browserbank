@@ -1,5 +1,5 @@
-abstract class View<T> {
-    private _elemento: JQuery;
+export abstract class View<T> {
+    protected _elemento: JQuery;
 
     constructor(seletor: string) {
         this._elemento = $(seletor)
@@ -12,6 +12,7 @@ abstract class View<T> {
     abstract template(model: T): string
 
 }
+
 
 // o protected serve para que, tanto a classe em si 
 // quanto seus filhos possam usar os métodos e atributos. 
