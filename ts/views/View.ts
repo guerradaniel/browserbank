@@ -1,3 +1,5 @@
+import { logarTempoDeExecucao } from '../helpers/decorators/index'
+
 export abstract class View<T> {
 
 
@@ -9,6 +11,7 @@ export abstract class View<T> {
         this._escapar = escapar
     }
 
+    @logarTempoDeExecucao()
     update(model: T) {
 
         let template = this.template(model)
@@ -17,6 +20,8 @@ export abstract class View<T> {
             template = template.replace(/<script>[\s\S]*?<\/script>/g, '')
 
         this._elemento.html(template)
+
+
     }
     abstract template(model: T): string
 
